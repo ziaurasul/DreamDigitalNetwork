@@ -1,0 +1,2304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Digital Network - Premium IPTV Services Worldwide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Meta tags for SEO and social sharing -->
+    <meta name="description" content="Premium IPTV Services - 10,000+ Live Channels, 40,000+ Movies & 5,000+ Series. Starting from ₨499/month. 4K/8K Quality, 24/7 Support, Worldwide Coverage.">
+    <meta name="keywords" content="IPTV, streaming, live TV, movies, series, 4K, premium channels, sports, entertainment">
+    <meta name="author" content="Dream Digital Network">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dreamdigitalnetwork.com/">
+    <meta property="og:title" content="Dream Digital Network - Premium IPTV Services Worldwide">
+    <meta property="og:description" content="Stream 10,000+ Live Channels, 40,000+ Movies & 5,000+ Series in 4K Ultra HD. Starting from ₨499/month">
+    <meta property="og:image" content="https://dreamdigitalnetwork.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dreamdigitalnetwork.com/">
+    <meta property="twitter:title" content="Dream Digital Network - Premium IPTV Services">
+    <meta property="twitter:description" content="Premium IPTV with 10,000+ channels, 40,000+ movies. 4K quality, worldwide coverage.">
+    <meta property="twitter:image" content="https://dreamdigitalnetwork.com/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --netflix-red: #e50914;
+            --netflix-dark-red: #b20710;
+            --netflix-black: #141414;
+            --netflix-dark-gray: #181818;
+            --netflix-gray: #333333;
+            --netflix-light-gray: #564d4d;
+            --netflix-white: #ffffff;
+            --netflix-yellow: #f5c518;
+        }
+        
+        * {
+            font-family: 'Netflix Sans', 'Roboto', sans-serif;
+        }
+        
+        body { 
+            background: var(--netflix-black);
+            color: var(--netflix-white);
+            overflow-x: hidden;
+        }
+        
+        .netflix-bg {
+            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23141414" width="1920" height="1080"/><g opacity="0.1"><circle cx="200" cy="200" r="100" fill="%23e50914"/><circle cx="800" cy="400" r="150" fill="%23e50914"/><circle cx="1400" cy="300" r="120" fill="%23e50914"/><circle cx="600" cy="800" r="80" fill="%23e50914"/><circle cx="1200" cy="700" r="200" fill="%23e50914"/></g></svg>');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .netflix-card {
+            background: rgba(20, 20, 20, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .netflix-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
+            border-color: var(--netflix-red);
+        }
+        
+        .netflix-button {
+            background: var(--netflix-red);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .netflix-button:hover {
+            background: var(--netflix-dark-red);
+            transform: translateY(-2px);
+        }
+        
+        .netflix-tab {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .netflix-tab.active {
+            background: var(--netflix-red);
+            border-color: var(--netflix-red);
+        }
+        
+        .netflix-tab:hover {
+            border-color: var(--netflix-red);
+            background: rgba(229, 9, 20, 0.1);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(45deg, rgba(229, 9, 20, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .slide-in {
+            animation: slideIn 1s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(229, 9, 20, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(229, 9, 20, 0.8); }
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .app-tab-content {
+            display: none;
+        }
+        
+        .app-tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .netflix-logo {
+            font-weight: 900;
+            font-size: 2rem;
+            color: var(--netflix-red);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .disclaimer-box {
+            background: rgba(245, 197, 24, 0.1);
+            border: 1px solid var(--netflix-yellow);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-highlight {
+            background: linear-gradient(135deg, rgba(229, 9, 20, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+            border-left: 4px solid var(--netflix-red);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+            
+            .netflix-tab {
+                margin-bottom: 10px;
+                margin-right: 5px;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            
+            .hero-content {
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .grid {
+                gap: 1rem;
+            }
+            
+            .text-4xl {
+                font-size: 2rem;
+            }
+            
+            .text-6xl {
+                font-size: 3rem;
+            }
+            
+            .px-8 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .py-4 {
+                padding-top: 0.75rem;
+                padding-bottom: 0.75rem;
+            }
+            
+            .netflix-card {
+                padding: 1rem;
+            }
+            
+            .channel-item {
+                min-width: 100px;
+                height: 70px;
+                font-size: 11px;
+            }
+            
+            #tvScreen {
+                height: 200px;
+            }
+            
+            .app-showcase {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .review-card {
+                padding: 1rem;
+            }
+        }
+        
+        .channel-preview {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .channel-preview::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .channel-item {
+            min-width: 120px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--netflix-red), var(--netflix-dark-red));
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .channel-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.7);
+        }
+
+        .channel-item.active {
+            background: var(--netflix-red);
+            box-shadow: 0 0 30px rgba(229, 9, 20, 0.8);
+        }
+
+        /* Enhanced TV Screen Styles */
+        #tvScreen {
+            position: relative;
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            border: 2px solid #333;
+            box-shadow: 
+                inset 0 0 50px rgba(0,0,0,0.5),
+                0 0 50px rgba(229, 9, 20, 0.3);
+        }
+
+        .demo-content {
+            animation: slideInFromRight 0.5s ease-out;
+        }
+
+        @keyframes slideInFromRight {
+            from { 
+                opacity: 0; 
+                transform: translateX(100px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+        }
+
+        .video-controls {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-container {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .progress-container:hover .progress-bar {
+            height: 6px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            transition: height 0.2s ease;
+        }
+
+        .pricing-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .pricing-card:hover::before {
+            left: 100%;
+        }
+
+        .tax-info {
+            background: rgba(245, 197, 24, 0.1);
+            border: 1px solid rgba(245, 197, 24, 0.3);
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-top: 8px;
+            font-size: 11px;
+            color: #f5c518;
+        }
+
+        .review-card {
+            background: rgba(20, 20, 20, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(229, 9, 20, 0.2);
+            border-color: rgba(229, 9, 20, 0.3);
+        }
+
+        .review-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--netflix-red), #ff6b6b, var(--netflix-red));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .review-card:hover::before {
+            opacity: 1;
+        }
+
+        .star-rating {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .review-text {
+            color: #e5e5e5;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reviewer-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--netflix-red), #ff6b6b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .reviewer-details h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .reviewer-details p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .app-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .app-card {
+            background: rgba(20, 20, 20, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(229, 9, 20, 0.3);
+            border-color: var(--netflix-red);
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 16px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--netflix-red), #ff6b6b);
+            box-shadow: 0 8px 24px rgba(229, 9, 20, 0.3);
+        }
+
+        .app-card h3 {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .app-card p {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--netflix-red), #ff4757);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(229, 9, 20, 0.4);
+        }
+    </style>
+</head>
+<body class="netflix-bg">
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923020777054" target="_blank" class="whatsapp-float">
+        <div class="bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors pulse-glow">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+        </div>
+    </a>
+
+    <!-- Netflix-Style Header -->
+    <header class="fixed top-0 w-full z-50 bg-gradient-to-b from-black via-black/80 to-transparent">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Enhanced Professional Logo -->
+                <div class="flex items-center space-x-4 slide-in">
+                    <div class="flex items-center space-x-3">
+                        <!-- 3D TV Icon with Streaming Effect -->
+                        <div class="relative">
+                            <div class="w-12 h-12 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-lg flex items-center justify-center shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-300 pulse-glow">
+                                <!-- TV Screen -->
+                                <div class="w-8 h-6 bg-black rounded-sm relative overflow-hidden">
+                                    <!-- Play Button -->
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-3 h-3 bg-white rounded-full flex items-center justify-center">
+                                            <svg class="w-2 h-2 text-black" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Streaming Lines -->
+                                    <div class="absolute top-1 left-1 w-1 h-1 bg-red-400 rounded-full animate-ping"></div>
+                                    <div class="absolute bottom-1 right-1 w-1 h-1 bg-blue-400 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
+                                </div>
+                                <!-- Live Indicator -->
+                                <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Logo Text -->
+                        <div class="flex flex-col">
+                            <div class="text-2xl font-black bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                                DREAM
+                            </div>
+                            <div class="text-xs font-semibold text-red-500 -mt-1 hidden md:block">
+                                DIGITAL NETWORK
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Currency Selector -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <select id="currencySelector" class="bg-black/50 border border-gray-600 rounded px-3 py-2 text-white text-sm focus:outline-none focus:border-red-500">
+                        <option value="PKR">🇵🇰 PKR</option>
+                        <option value="USD" selected>🇺🇸 USD</option>
+                        <option value="INR">🇮🇳 INR</option>
+                        <option value="AED">🇦🇪 AED</option>
+                        <option value="EUR">🇮🇹 EUR</option>
+                        <option value="GBP">🇬🇧 GBP</option>
+                        <option value="CAD">🇨🇦 CAD</option>
+                        <option value="AUD">🇦🇺 AUD</option>
+                        <option value="SAR">🇸🇦 SAR</option>
+                        <option value="QAR">🇶🇦 QAR</option>
+                    </select>
+                </div>
+                
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-white hover:text-gray-300 transition-colors">Home</a>
+                    <a href="#services" class="text-white hover:text-gray-300 transition-colors">Services</a>
+                    <a href="#packages" class="text-white hover:text-gray-300 transition-colors">Packages</a>
+                    <a href="#reseller" class="text-white hover:text-gray-300 transition-colors">Reseller</a>
+                    <a href="#apps" class="text-white hover:text-gray-300 transition-colors">Download App</a>
+                    <a href="#reviews" class="text-white hover:text-gray-300 transition-colors">Reviews</a>
+                    <a href="#contact" class="text-white hover:text-gray-300 transition-colors">Contact</a>
+                </div>
+                
+                <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-white hover:text-gray-300 transition-colors">Home</a>
+                    <a href="#services" class="text-white hover:text-gray-300 transition-colors">Services</a>
+                    <a href="#packages" class="text-white hover:text-gray-300 transition-colors">Packages</a>
+                    <a href="#reseller" class="text-white hover:text-gray-300 transition-colors">Reseller</a>
+                    <a href="#apps" class="text-white hover:text-gray-300 transition-colors">Download App</a>
+                    <a href="#reviews" class="text-white hover:text-gray-300 transition-colors">Reviews</a>
+                    <a href="#contact" class="text-white hover:text-gray-300 transition-colors">Contact</a>
+                    <select id="currencySelector2" class="bg-black/50 border border-gray-600 rounded px-3 py-2 text-white text-sm focus:outline-none focus:border-red-500 w-32">
+                        <option value="PKR">🇵🇰 PKR</option>
+                        <option value="USD" selected>🇺🇸 USD</option>
+                        <option value="INR">🇮🇳 INR</option>
+                        <option value="AED">🇦🇪 AED</option>
+                        <option value="EUR">🇮🇹 EUR</option>
+                        <option value="GBP">🇬🇧 GBP</option>
+                        <option value="CAD">🇨🇦 CAD</option>
+                        <option value="AUD">🇦🇺 AUD</option>
+                        <option value="SAR">🇸🇦 SAR</option>
+                        <option value="QAR">🇶🇦 QAR</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Enhanced Netflix-Style Hero Section with Interactive Video Demos -->
+    <section id="home" class="relative min-h-screen flex items-center hero-gradient">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="container mx-auto px-4 relative z-10 pt-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="hero-content fade-in">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <span class="text-white">Unlimited</span><br>
+                        <span style="color: var(--netflix-red);">Entertainment</span><br>
+                        <span class="text-white">Everywhere</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
+                        Stream 10,000+ Live Channels, 40,000+ Movies & 5,000+ Series in 4K Ultra HD. 
+                        <span class="text-yellow-400 font-semibold price-display" data-pkr="499" data-usd="1.81" data-inr="150" data-aed="6.64" data-eur="1.66" data-gbp="1.43" data-cad="2.45" data-aud="2.75" data-sar="6.79" data-qar="6.58">Starting from $1.81/month</span>
+                    </p>
+                    
+                    <!-- Key Features -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                        <div class="feature-highlight text-center">
+                            <div class="text-2xl mb-2">📺</div>
+                            <div class="text-sm font-semibold">10,000+<br>Live Channels</div>
+                        </div>
+                        <div class="feature-highlight text-center">
+                            <div class="text-2xl mb-2">🎬</div>
+                            <div class="text-sm font-semibold">40,000+<br>Movies</div>
+                        </div>
+                        <div class="feature-highlight text-center">
+                            <div class="text-2xl mb-2">📺</div>
+                            <div class="text-sm font-semibold">5,000+<br>Series</div>
+                        </div>
+                        <div class="feature-highlight text-center">
+                            <div class="text-2xl mb-2">⚡</div>
+                            <div class="text-sm font-semibold">99.9%<br>Uptime</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="scrollToSection('packages')" class="netflix-button text-lg px-8 py-4 rounded">
+                            ▶ View Packages
+                        </button>
+                        <button onclick="scrollToSection('contact')" class="border-2 border-white text-white px-8 py-4 rounded font-semibold text-lg hover:bg-white hover:text-black transition-all text-center">
+                            📞 Contact Us
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Interactive TV Preview with 30-Second Demos -->
+                <div class="floating-animation">
+                    <div class="relative">
+                        <div class="bg-black rounded-lg p-4 shadow-2xl">
+                            <div class="bg-gray-900 rounded aspect-video relative overflow-hidden" id="tvScreen">
+                                <!-- Main Video Display Area -->
+                                <div id="videoDisplay" class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                                    <!-- Default Welcome Screen -->
+                                    <div id="welcomeScreen" class="text-center">
+                                        <div class="text-6xl mb-4 animate-pulse">📺</div>
+                                        <h3 class="text-2xl font-bold text-white mb-2">Dream Digital Network</h3>
+                                        <p class="text-gray-400 mb-4">Click any channel below to watch live highlights</p>
+                                        <div class="text-sm text-gray-500">
+                                            <span class="inline-block bg-red-600 text-white px-2 py-1 rounded text-xs mr-2">🔴 LIVE</span>
+                                            Interactive Preview Available
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Video Demo Container -->
+                                    <div id="demoVideo" class="hidden w-full h-full relative">
+                                        <div id="videoContent" class="w-full h-full flex items-center justify-center bg-black demo-content">
+                                            <!-- Dynamic video content will be inserted here -->
+                                        </div>
+                                        
+                                        <!-- Enhanced Video Controls Overlay -->
+                                        <div class="absolute bottom-4 left-4 right-4 video-controls rounded-lg p-3">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <div class="flex items-center space-x-3">
+                                                    <button id="playPauseBtn" onclick="togglePlayPause()" class="bg-red-600 hover:bg-red-700 rounded-full p-2 transition-colors">
+                                                        <svg id="playIcon" class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M8 5v14l11-7z"/>
+                                                        </svg>
+                                                        <svg id="pauseIcon" class="w-4 h-4 text-white hidden" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="text-white text-sm">
+                                                        <span id="currentTime">00:00</span> / <span id="totalTime">00:30</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center space-x-2">
+                                                    <div id="channelInfo" class="text-white text-sm font-semibold"></div>
+                                                    <button onclick="closeDemo()" class="text-gray-400 hover:text-white transition-colors">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- Enhanced Progress Bar -->
+                                            <div class="progress-container bg-gray-600 rounded-full h-1 cursor-pointer" onclick="seekVideo(event)">
+                                                <div id="progressBar" class="progress-bar bg-red-600 rounded-full transition-all duration-300" style="width: 0%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Enhanced Interactive Channel Grid -->
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4">
+                                    <div class="channel-preview">
+                                        <div class="channel-item" onclick="playChannelDemo('cnn')" data-channel="cnn">
+                                            <div class="text-xs font-bold">CNN</div>
+                                            <div class="text-xs opacity-75">News</div>
+                                        </div>
+                                        <div class="channel-item" onclick="playChannelDemo('bbc')" data-channel="bbc">
+                                            <div class="text-xs font-bold">BBC</div>
+                                            <div class="text-xs opacity-75">World</div>
+                                        </div>
+                                        <div class="channel-item" onclick="playChannelDemo('espn')" data-channel="espn">
+                                            <div class="text-xs font-bold">ESPN</div>
+                                            <div class="text-xs opacity-75">Sports</div>
+                                        </div>
+                                        <div class="channel-item" onclick="playChannelDemo('hbo')" data-channel="hbo">
+                                            <div class="text-xs font-bold">HBO</div>
+                                            <div class="text-xs opacity-75">Premium</div>
+                                        </div>
+                                        <div class="channel-item" onclick="playChannelDemo('netflix')" data-channel="netflix">
+                                            <div class="text-xs font-bold">Netflix</div>
+                                            <div class="text-xs opacity-75">Movies</div>
+                                        </div>
+                                        <div class="channel-item" onclick="playChannelDemo('disney')" data-channel="disney">
+                                            <div class="text-xs font-bold">Disney+</div>
+                                            <div class="text-xs opacity-75">Family</div>
+                                        </div>
+                                        <div class="channel-item" onclick="playChannelDemo('prime')" data-channel="prime">
+                                            <div class="text-xs font-bold">Prime</div>
+                                            <div class="text-xs opacity-75">Video</div>
+                                        </div>
+                                        <div class="channel-item" onclick="playChannelDemo('discovery')" data-channel="discovery">
+                                            <div class="text-xs font-bold">Discovery</div>
+                                            <div class="text-xs opacity-75">Docs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Live Indicator -->
+                                <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded text-sm font-bold animate-pulse">
+                                    🔴 LIVE
+                                </div>
+                                
+                                <!-- Quality Badge -->
+                                <div class="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded text-sm font-bold">
+                                    4K UHD
+                                </div>
+                                
+                                <!-- Viewer Count -->
+                                <div class="absolute top-16 right-4 bg-black/70 text-white px-3 py-1 rounded text-xs">
+                                    👥 <span id="viewerCount">12,847</span> watching
+                                </div>
+                            </div>
+                            
+                            <!-- Enhanced TV Controls -->
+                            <div class="flex justify-between items-center mt-4">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                                    <div class="w-3 h-3 bg-gray-600 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-gray-600 rounded-full"></div>
+                                </div>
+                                <div class="text-xs text-gray-400">
+                                    <span id="currentChannel">Select Channel</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="changeVolume('down')" class="text-gray-400 hover:text-white transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                                        </svg>
+                                    </button>
+                                    <button onclick="changeVolume('up')" class="text-gray-400 hover:text-white transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-white">Our</span>
+                    <span style="color: var(--netflix-red);"> Services</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Comprehensive IPTV solutions with cutting-edge technology and worldwide coverage
+                </p>
+            </div>
+
+            <div class="service-grid">
+                <div class="netflix-card p-8 text-center">
+                    <div class="text-5xl mb-4">📺</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Live TV Channels</h3>
+                    <p class="text-gray-300 mb-6">10,000+ live channels from around the world including sports, news, entertainment, and more</p>
+                    <ul class="text-left space-y-2 text-gray-400">
+                        <li>• Premium Sports Channels</li>
+                        <li>• International News Networks</li>
+                        <li>• Entertainment & Movies</li>
+                        <li>• Kids & Family Content</li>
+                        <li>• Regional & Local Channels</li>
+                    </ul>
+                </div>
+
+                <div class="netflix-card p-8 text-center">
+                    <div class="text-5xl mb-4">🎬</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Movies & Series</h3>
+                    <p class="text-gray-300 mb-6">40,000+ movies and 5,000+ TV series in multiple languages with regular updates</p>
+                    <ul class="text-left space-y-2 text-gray-400">
+                        <li>• Latest Hollywood Releases</li>
+                        <li>• Bollywood & Regional Cinema</li>
+                        <li>• Popular TV Series</li>
+                        <li>• Documentaries</li>
+                        <li>• Multiple Language Options</li>
+                    </ul>
+                </div>
+
+                <div class="netflix-card p-8 text-center">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">High Performance</h3>
+                    <p class="text-gray-300 mb-6">Ultra-fast streaming with 99.9% uptime guarantee and multiple server locations</p>
+                    <ul class="text-left space-y-2 text-gray-400">
+                        <li>• 4K/8K Ultra HD Quality</li>
+                        <li>• Anti-Freeze Technology</li>
+                        <li>• Multiple Server Locations</li>
+                        <li>• 99.9% Uptime Guarantee</li>
+                        <li>• Fast Channel Switching</li>
+                    </ul>
+                </div>
+
+                <div class="netflix-card p-8 text-center">
+                    <div class="text-5xl mb-4">📱</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Multi-Device Support</h3>
+                    <p class="text-gray-300 mb-6">Compatible with all devices and platforms for seamless streaming experience</p>
+                    <ul class="text-left space-y-2 text-gray-400">
+                        <li>• Android & iOS Apps</li>
+                        <li>• Smart TV Support</li>
+                        <li>• MAG Boxes</li>
+                        <li>• PC/Mac Applications</li>
+                        <li>• Web Browser Access</li>
+                    </ul>
+                </div>
+
+                <div class="netflix-card p-8 text-center">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Global Coverage</h3>
+                    <p class="text-gray-300 mb-6">Worldwide service with local content and international channels</p>
+                    <ul class="text-left space-y-2 text-gray-400">
+                        <li>• USA, UK, Canada Content</li>
+                        <li>• European Channels</li>
+                        <li>• Middle East & Asia</li>
+                        <li>• Latin American Content</li>
+                        <li>• African Channels</li>
+                    </ul>
+                </div>
+
+                <div class="netflix-card p-8 text-center">
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">24/7 Support</h3>
+                    <p class="text-gray-300 mb-6">Round-the-clock technical support and customer service</p>
+                    <ul class="text-left space-y-2 text-gray-400">
+                        <li>• Live Chat Support</li>
+                        <li>• Email Assistance</li>
+                        <li>• WhatsApp Support</li>
+                        <li>• Technical Troubleshooting</li>
+                        <li>• Setup Assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Pricing Section -->
+    <section id="packages" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-white">Choose Your</span>
+                    <span style="color: var(--netflix-red);"> Perfect Plan</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Flexible pricing plans designed for every budget. All plans include 24/7 support and 99.9% uptime guarantee.
+                </p>
+                
+                <!-- International Pricing Notice -->
+                <div class="disclaimer-box max-w-4xl mx-auto mt-8">
+                    <div class="flex items-start space-x-3">
+                        <div class="text-yellow-400 text-xl">⚠️</div>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-yellow-400 mb-2">International Customers Notice:</h4>
+                            <p class="text-sm text-gray-300 leading-relaxed">
+                                • <strong>Government Taxes:</strong> Additional taxes may apply as per your country's regulations (5-18% typically)<br>
+                                • <strong>Transfer Charges:</strong> Bank/payment gateway fees may apply (2-5% of transaction)<br>
+                                • <strong>Currency Conversion:</strong> Rates updated daily, final amount may vary slightly<br>
+                                • <strong>Total Estimate:</strong> Expect 7-25% additional charges for international payments
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="netflix-card pricing-card p-8 text-center relative">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Basic</h3>
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="price-display" data-pkr="499" data-usd="1.81" data-inr="150" data-aed="6.64" data-eur="1.66" data-gbp="1.43" data-cad="2.45" data-aud="2.75" data-sar="6.79" data-qar="6.58">$1.81</span>
+                        </div>
+                        <p class="text-gray-400">/month</p>
+                        <div class="tax-info">
+                            <span id="taxInfo1">+ Est. ₨35-125 (taxes & fees)</span>
+                        </div>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 2,000+ Live Channels</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 10,000+ Movies</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 1,000+ Series</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> HD Quality</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 1 Device</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 24/7 Support</li>
+                    </ul>
+                    <a href="mailto:info.hawkeyelhr@gmail.com?subject=Basic Plan Inquiry" class="netflix-button w-full py-3 rounded">
+                        Choose Basic
+                    </a>
+                </div>
+
+                <!-- Standard Plan -->
+                <div class="netflix-card pricing-card p-8 text-center relative border-2 border-red-500">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                        POPULAR
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Standard</h3>
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="price-display" data-pkr="999" data-usd="3.62" data-inr="301" data-aed="13.28" data-eur="3.33" data-gbp="2.86" data-cad="4.90" data-aud="5.50" data-sar="13.58" data-qar="13.16">$3.62</span>
+                        </div>
+                        <p class="text-gray-400">/month</p>
+                        <div class="tax-info">
+                            <span id="taxInfo2">+ Est. ₨70-250 (taxes & fees)</span>
+                        </div>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 5,000+ Live Channels</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 20,000+ Movies</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 2,500+ Series</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Full HD Quality</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 2 Devices</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Premium Support</li>
+                    </ul>
+                    <a href="mailto:info.hawkeyelhr@gmail.com?subject=Standard Plan Inquiry" class="netflix-button w-full py-3 rounded">
+                        Choose Standard
+                    </a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="netflix-card pricing-card p-8 text-center relative">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Premium</h3>
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="price-display" data-pkr="1999" data-usd="7.24" data-inr="602" data-aed="26.56" data-eur="6.66" data-gbp="5.72" data-cad="9.80" data-aud="11.00" data-sar="27.16" data-qar="26.32">$7.24</span>
+                        </div>
+                        <p class="text-gray-400">/month</p>
+                        <div class="tax-info">
+                            <span id="taxInfo3">+ Est. ₨140-500 (taxes & fees)</span>
+                        </div>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 8,000+ Live Channels</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 30,000+ Movies</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 4,000+ Series</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 4K Ultra HD</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 3 Devices</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Priority Support</li>
+                    </ul>
+                    <a href="mailto:info.hawkeyelhr@gmail.com?subject=Premium Plan Inquiry" class="netflix-button w-full py-3 rounded">
+                        Choose Premium
+                    </a>
+                </div>
+
+                <!-- Ultimate Plan -->
+                <div class="netflix-card pricing-card p-8 text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-600 text-black px-4 py-1 rounded-full text-sm font-bold">
+                        BEST VALUE
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Ultimate</h3>
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="price-display" data-pkr="3499" data-usd="12.68" data-inr="1054" data-aed="46.48" data-eur="11.66" data-gbp="10.02" data-cad="17.15" data-aud="19.25" data-sar="47.53" data-qar="46.06">$12.68</span>
+                        </div>
+                        <p class="text-gray-400">/month</p>
+                        <div class="tax-info">
+                            <span id="taxInfo4">+ Est. ₨245-875 (taxes & fees)</span>
+                        </div>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 10,000+ Live Channels</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 40,000+ Movies</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 5,000+ Series</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 8K Ultra HD</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 5 Devices</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> VIP Support</li>
+                    </ul>
+                    <a href="mailto:info.hawkeyelhr@gmail.com?subject=Ultimate Plan Inquiry" class="netflix-button w-full py-3 rounded">
+                        Choose Ultimate
+                    </a>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="mt-16 text-center">
+                <div class="bg-gray-800 rounded-lg p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-white mb-4">💰 Payment Methods & International Charges</h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div>
+                            <h4 class="font-semibold text-red-400 mb-3">🏦 Accepted Payment Methods:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Bank Transfer (Local & International)</li>
+                                <li>• PayPal (International)</li>
+                                <li>• Western Union</li>
+                                <li>• Cryptocurrency (Bitcoin, USDT)</li>
+                                <li>• Local Mobile Wallets</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-400 mb-3">📊 Estimated Additional Charges:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• <strong>USA/Canada:</strong> +8-15% (taxes + fees)</li>
+                                <li>• <strong>Europe:</strong> +12-20% (VAT + fees)</li>
+                                <li>• <strong>UAE/Saudi:</strong> +7-12% (VAT + fees)</li>
+                                <li>• <strong>India:</strong> +10-18% (GST + fees)</li>
+                                <li>• <strong>Australia:</strong> +12-17% (GST + fees)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-yellow-900/30 border border-yellow-600 rounded">
+                        <p class="text-yellow-200 text-sm">
+                            <strong>Note:</strong> Final charges depend on your payment method and country regulations. 
+                            Contact us for exact pricing before payment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseller Section -->
+    <section id="reseller" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-white">Reseller</span>
+                    <span style="color: var(--netflix-red);"> Programs</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Start your own IPTV business with our credit-based reseller system. Minimum order 50 credits required.
+                </p>
+                
+                <!-- Reseller International Pricing Notice -->
+                <div class="disclaimer-box max-w-4xl mx-auto mt-8">
+                    <div class="flex items-start space-x-3">
+                        <div class="text-yellow-400 text-xl">⚠️</div>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-yellow-400 mb-2">Reseller International Charges:</h4>
+                            <p class="text-sm text-gray-300 leading-relaxed">
+                                • <strong>Minimum Order:</strong> 50 credits required for all reseller plans<br>
+                                • <strong>Government Taxes:</strong> Additional taxes may apply as per your country's regulations (5-18% typically)<br>
+                                • <strong>Transfer Charges:</strong> Bank/payment gateway fees may apply (2-5% of transaction)<br>
+                                • <strong>Currency Conversion:</strong> Rates updated daily, final amount may vary slightly<br>
+                                • <strong>Total Estimate:</strong> Expect 7-25% additional charges for international payments
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                <!-- Starter Reseller -->
+                <div class="netflix-card pricing-card p-8 text-center relative">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Starter</h3>
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="reseller-price-display" data-pkr="199" data-usd="0.72" data-inr="60" data-aed="2.65" data-eur="0.66" data-gbp="0.57" data-cad="0.98" data-aud="1.09" data-sar="2.71" data-qar="2.63">$0.72</span>
+                        </div>
+                        <p class="text-gray-400">/credit</p>
+                        <div class="tax-info">
+                            <span id="resellerTaxInfo1">+ Est. ₨14-50 (taxes & fees)</span>
+                        </div>
+                        <div class="bg-red-600/20 border border-red-500 rounded p-2 mt-3">
+                            <p class="text-red-400 text-xs font-semibold">Minimum: 50 credits</p>
+                        </div>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Basic Plan Access</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 2,000+ Live Channels</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 10,000+ Movies</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> HD Quality</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Reseller Panel</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Basic Support</li>
+                    </ul>
+                    <a href="mailto:info.hawkeyelhr@gmail.com?subject=Starter Reseller Plan Inquiry" class="netflix-button w-full py-3 rounded">
+                        Start Reselling
+                    </a>
+                </div>
+
+                <!-- Standard Reseller -->
+                <div class="netflix-card pricing-card p-8 text-center relative border-2 border-red-500">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                        POPULAR
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Standard</h3>
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="reseller-price-display" data-pkr="599" data-usd="2.17" data-inr="180" data-aed="7.97" data-eur="2.00" data-gbp="1.71" data-cad="2.94" data-aud="3.29" data-sar="8.14" data-qar="7.91">$2.17</span>
+                        </div>
+                        <p class="text-gray-400">/credit</p>
+                        <div class="tax-info">
+                            <span id="resellerTaxInfo2">+ Est. ₨42-150 (taxes & fees)</span>
+                        </div>
+                        <div class="bg-red-600/20 border border-red-500 rounded p-2 mt-3">
+                            <p class="text-red-400 text-xs font-semibold">Minimum: 50 credits</p>
+                        </div>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Standard Plan Access</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 5,000+ Live Channels</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 20,000+ Movies</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Full HD Quality</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Advanced Panel</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Priority Support</li>
+                    </ul>
+                    <a href="mailto:info.hawkeyelhr@gmail.com?subject=Standard Reseller Plan Inquiry" class="netflix-button w-full py-3 rounded">
+                        Start Reselling
+                    </a>
+                </div>
+
+                <!-- Premium Reseller -->
+                <div class="netflix-card pricing-card p-8 text-center relative">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Premium</h3>
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="reseller-price-display" data-pkr="999" data-usd="3.62" data-inr="301" data-aed="13.28" data-eur="3.33" data-gbp="2.86" data-cad="4.90" data-aud="5.50" data-sar="13.58" data-qar="13.16">$3.62</span>
+                        </div>
+                        <p class="text-gray-400">/credit</p>
+                        <div class="tax-info">
+                            <span id="resellerTaxInfo3">+ Est. ₨70-250 (taxes & fees)</span>
+                        </div>
+                        <div class="bg-red-600/20 border border-red-500 rounded p-2 mt-3">
+                            <p class="text-red-400 text-xs font-semibold">Minimum: 50 credits</p>
+                        </div>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Premium Plan Access</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 8,000+ Live Channels</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 30,000+ Movies</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 4K Ultra HD</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Pro Panel</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> VIP Support</li>
+                    </ul>
+                    <a href="mailto:info.hawkeyelhr@gmail.com?subject=Premium Reseller Plan Inquiry" class="netflix-button w-full py-3 rounded">
+                        Start Reselling
+                    </a>
+                </div>
+
+                <!-- Ultimate Reseller -->
+                <div class="netflix-card pricing-card p-8 text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-600 text-black px-4 py-1 rounded-full text-sm font-bold">
+                        BEST VALUE
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Ultimate</h3>
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="reseller-price-display" data-pkr="1499" data-usd="5.43" data-inr="451" data-aed="19.93" data-eur="4.99" data-gbp="4.29" data-cad="7.35" data-aud="8.25" data-sar="20.36" data-qar="19.73">$5.43</span>
+                        </div>
+                        <p class="text-gray-400">/credit</p>
+                        <div class="tax-info">
+                            <span id="resellerTaxInfo4">+ Est. ₨105-375 (taxes & fees)</span>
+                        </div>
+                        <div class="bg-red-600/20 border border-red-500 rounded p-2 mt-3">
+                            <p class="text-red-400 text-xs font-semibold">Minimum: 50 credits</p>
+                        </div>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Ultimate Plan Access</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 10,000+ Live Channels</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 40,000+ Movies</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 8K Ultra HD</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Master Panel</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Dedicated Support</li>
+                    </ul>
+                    <a href="mailto:info.hawkeyelhr@gmail.com?subject=Ultimate Reseller Plan Inquiry" class="netflix-button w-full py-3 rounded">
+                        Start Reselling
+                    </a>
+                </div>
+            </div>
+
+            <!-- Reseller Benefits -->
+            <div class="mt-16 text-center">
+                <div class="bg-gray-800 rounded-lg p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-white mb-4">🚀 Reseller Benefits & Requirements</h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div>
+                            <h4 class="font-semibold text-red-400 mb-3">✅ What You Get:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Complete reseller management panel</li>
+                                <li>• Create and manage customer accounts</li>
+                                <li>• Real-time credit tracking system</li>
+                                <li>• Bulk account creation tools</li>
+                                <li>• Customer support assistance</li>
+                                <li>• Marketing materials provided</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-400 mb-3">📋 Requirements:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• <strong>Minimum Order:</strong> 50 credits (all plans)</li>
+                                <li>• <strong>Payment:</strong> Full payment before activation</li>
+                                <li>• <strong>Support:</strong> Basic technical knowledge required</li>
+                                <li>• <strong>Business:</strong> Serious business commitment</li>
+                                <li>• <strong>Communication:</strong> Regular contact for updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-yellow-900/30 border border-yellow-600 rounded">
+                        <p class="text-yellow-200 text-sm">
+                            <strong>Note:</strong> All reseller accounts require verification and approval. 
+                            Contact us for detailed terms and conditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps & Compatibility Section -->
+    <section id="apps" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-white">Compatible</span>
+                    <span style="color: var(--netflix-red);"> Apps & Devices</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Stream on any device, anywhere. Our service works seamlessly across all platforms and devices.
+                </p>
+            </div>
+
+            <!-- App Categories Tabs -->
+            <div class="flex flex-wrap justify-center mb-12 gap-4">
+                <button class="netflix-tab active" onclick="showAppCategory('mobile')">📱 Mobile Apps</button>
+                <button class="netflix-tab" onclick="showAppCategory('tv')">📺 Smart TV</button>
+                <button class="netflix-tab" onclick="showAppCategory('streaming')">📡 Streaming Devices</button>
+                <button class="netflix-tab" onclick="showAppCategory('computer')">💻 Computer</button>
+            </div>
+
+            <!-- Mobile Apps -->
+            <div id="mobile" class="app-tab-content active">
+                <div class="app-showcase">
+                    <div class="app-card">
+                        <div class="app-icon">📱</div>
+                        <h3>IPTV Smarters Pro</h3>
+                        <p>Most popular IPTV player with advanced features and user-friendly interface</p>
+                        <a href="#" class="download-btn">Download for Android</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">🍎</div>
+                        <h3>GSE Smart IPTV</h3>
+                        <p>Premium IPTV player for iOS devices with excellent streaming quality</p>
+                        <a href="#" class="download-btn">Download for iOS</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">⚡</div>
+                        <h3>TiviMate</h3>
+                        <p>Advanced IPTV player with EPG support and modern interface</p>
+                        <a href="#" class="download-btn">Download APK</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">🎯</div>
+                        <h3>Perfect Player</h3>
+                        <p>Lightweight and fast IPTV player with customizable interface</p>
+                        <a href="#" class="download-btn">Get App</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart TV Apps -->
+            <div id="tv" class="app-tab-content">
+                <div class="app-showcase">
+                    <div class="app-card">
+                        <div class="app-icon">📺</div>
+                        <h3>Samsung Smart TV</h3>
+                        <p>Native IPTV apps available on Samsung Smart TV App Store</p>
+                        <a href="#" class="download-btn">Install from Store</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">🔷</div>
+                        <h3>LG WebOS</h3>
+                        <p>Compatible IPTV players for LG Smart TVs with WebOS</p>
+                        <a href="#" class="download-btn">Get for WebOS</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">🤖</div>
+                        <h3>Android TV</h3>
+                        <p>Full Android TV support with Google Play Store apps</p>
+                        <a href="#" class="download-btn">Install Apps</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">🍎</div>
+                        <h3>Apple TV</h3>
+                        <p>Premium IPTV experience on Apple TV with tvOS apps</p>
+                        <a href="#" class="download-btn">App Store</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Streaming Devices -->
+            <div id="streaming" class="app-tab-content">
+                <div class="app-showcase">
+                    <div class="app-card">
+                        <div class="app-icon">🔥</div>
+                        <h3>Amazon Fire TV</h3>
+                        <p>Optimized apps for Fire TV Stick and Fire TV devices</p>
+                        <a href="#" class="download-btn">Get for Fire TV</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">📡</div>
+                        <h3>MAG Boxes</h3>
+                        <p>Professional IPTV set-top boxes with built-in support</p>
+                        <a href="#" class="download-btn">Setup Guide</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">🎮</div>
+                        <h3>NVIDIA Shield</h3>
+                        <p>High-performance streaming with Android TV apps</p>
+                        <a href="#" class="download-btn">Install Apps</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">📺</div>
+                        <h3>Roku Devices</h3>
+                        <p>IPTV channels and apps available for Roku streaming devices</p>
+                        <a href="#" class="download-btn">Add Channels</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computer Apps -->
+            <div id="computer" class="app-tab-content">
+                <div class="app-showcase">
+                    <div class="app-card">
+                        <div class="app-icon">🪟</div>
+                        <h3>Windows PC</h3>
+                        <p>VLC Media Player and dedicated IPTV software for Windows</p>
+                        <a href="#" class="download-btn">Download for PC</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">🍎</div>
+                        <h3>macOS</h3>
+                        <p>IPTV players and VLC support for Mac computers</p>
+                        <a href="#" class="download-btn">Get for Mac</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">🌐</div>
+                        <h3>Web Browser</h3>
+                        <p>Stream directly in your web browser without downloads</p>
+                        <a href="#" class="download-btn">Open Web Player</a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">🐧</div>
+                        <h3>Linux</h3>
+                        <p>VLC and other media players with IPTV support for Linux</p>
+                        <a href="#" class="download-btn">Linux Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Setup Instructions -->
+            <div class="mt-16 text-center">
+                <div class="bg-gray-800 rounded-lg p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-white mb-4">📋 Easy Setup Process</h3>
+                    <div class="grid md:grid-cols-3 gap-6 text-left">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">1️⃣</div>
+                            <h4 class="font-semibold text-red-400 mb-2">Choose Your App</h4>
+                            <p class="text-gray-300 text-sm">Select the best IPTV app for your device from our recommended list</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">2️⃣</div>
+                            <h4 class="font-semibold text-red-400 mb-2">Get Credentials</h4>
+                            <p class="text-gray-300 text-sm">Receive your login details and M3U playlist URL after purchase</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">3️⃣</div>
+                            <h4 class="font-semibold text-red-400 mb-2">Start Streaming</h4>
+                            <p class="text-gray-300 text-sm">Enter your details in the app and enjoy unlimited entertainment</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-red-900/30 border border-red-600 rounded">
+                        <p class="text-red-200 text-sm">
+                            <strong>Need Help?</strong> Our support team provides step-by-step setup assistance for all devices and apps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-white">What Our</span>
+                    <span style="color: var(--netflix-red);"> Customers Say</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Join thousands of satisfied customers worldwide who trust Dream Digital Network for their entertainment needs.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">
+                        "Absolutely amazing service! The quality is crystal clear and I never experience any buffering. The channel selection is incredible with everything from sports to international news. Best IPTV service I've ever used!"
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">MJ</div>
+                        <div class="reviewer-details">
+                            <h4>Michael Johnson</h4>
+                            <p>New York, USA • Ultimate Plan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">
+                        "I've been using this service for 8 months now and it's been fantastic. The customer support is very responsive and helped me set up everything perfectly. Great value for money!"
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">SA</div>
+                        <div class="reviewer-details">
+                            <h4>Sarah Ahmed</h4>
+                            <p>London, UK • Premium Plan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">
+                        "The movie collection is huge! I can find almost any movie I want to watch. The 4K quality is stunning on my smart TV. Highly recommend to anyone looking for premium IPTV."
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">RK</div>
+                        <div class="reviewer-details">
+                            <h4>Raj Kumar</h4>
+                            <p>Mumbai, India • Standard Plan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">
+                        "Perfect for sports fans! I can watch all the live matches in HD quality. The EPG guide makes it easy to find what I want to watch. Setup was very easy too."
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">DA</div>
+                        <div class="reviewer-details">
+                            <h4>David Anderson</h4>
+                            <p>Toronto, Canada • Ultimate Plan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">
+                        "Excellent service with great variety of channels from my home country. The streaming quality is consistent and the price is very reasonable. Customer service is top-notch!"
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">FM</div>
+                        <div class="reviewer-details">
+                            <h4>Fatima Mohammed</h4>
+                            <p>Dubai, UAE • Premium Plan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">
+                        "I'm a reseller and the panel is very user-friendly. Managing customers is easy and the credit system works perfectly. Great business opportunity with reliable service!"
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">AB</div>
+                        <div class="reviewer-details">
+                            <h4>Ahmed Bashir</h4>
+                            <p>Karachi, Pakistan • Reseller</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Statistics -->
+            <div class="mt-16 text-center">
+                <div class="bg-gray-800 rounded-lg p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-white mb-6">📊 Customer Satisfaction Stats</h3>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-500 mb-2">4.9/5</div>
+                            <p class="text-gray-300">Average Rating</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-500 mb-2">50,000+</div>
+                            <p class="text-gray-300">Happy Customers</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-500 mb-2">99.9%</div>
+                            <p class="text-gray-300">Uptime Guarantee</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-500 mb-2">24/7</div>
+                            <p class="text-gray-300">Support Available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Disclaimer Section -->
+    <section class="py-16 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="disclaimer-box">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-yellow-400 text-3xl">⚠️</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-400 mb-4">Important Legal Disclaimer</h3>
+                            <div class="space-y-4 text-gray-300 leading-relaxed">
+                                <p>
+                                    <strong>Content Responsibility:</strong> Dream Digital Network provides IPTV streaming technology and infrastructure services. We do not host, store, or distribute any copyrighted content. All content is sourced from publicly available streams and third-party providers.
+                                </p>
+                                <p>
+                                    <strong>User Responsibility:</strong> Users are solely responsible for ensuring their use of our service complies with local laws and regulations in their jurisdiction. We strongly advise users to only access content they have legal rights to view.
+                                </p>
+                                <p>
+                                    <strong>Geographic Restrictions:</strong> Some content may be subject to geographic restrictions. Users should respect content licensing agreements and territorial limitations.
+                                </p>
+                                <p>
+                                    <strong>Service Availability:</strong> While we strive for 99.9% uptime, streaming quality may vary based on internet connection, server load, and third-party content availability. We cannot guarantee uninterrupted access to all channels at all times.
+                                </p>
+                                <p>
+                                    <strong>Age Restrictions:</strong> Our service may contain content suitable for mature audiences. Parental supervision is recommended for users under 18 years of age.
+                                </p>
+                                <div class="bg-red-900/30 border border-red-600 rounded p-4 mt-6">
+                                    <p class="text-red-200 font-semibold">
+                                        By using our service, you acknowledge that you have read, understood, and agree to comply with all applicable laws and our terms of service. Dream Digital Network reserves the right to terminate service for any violations.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                <span class="text-white">Get In</span>
+                <span style="color: var(--netflix-red);"> Touch</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Ready to start your streaming journey? Contact us for any questions or support.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="netflix-card p-8">
+                    <h3 class="text-2xl font-bold text-white mb-4">📧 Email Support</h3>
+                    <p class="text-gray-300 mb-6">For all inquiries, support, and business partnerships</p>
+                    <a href="mailto:info.hawkeyelhr@gmail.com" class="netflix-button inline-block px-8 py-3 rounded">
+                        Send Email
+                    </a>
+                </div>
+                
+                <div class="netflix-card p-8">
+                    <h3 class="text-2xl font-bold text-white mb-4">💬 WhatsApp</h3>
+                    <p class="text-gray-300 mb-6">Quick support and instant communication</p>
+                    <p class="text-sm text-gray-400 mb-4">Click the floating WhatsApp button for direct contact</p>
+                    <div class="bg-green-600 text-white px-4 py-2 rounded inline-block">
+                        Available 24/7
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-gradient-to-t from-black to-gray-900 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold text-white">DREAM</div>
+                            <div class="text-xs text-red-500">DIGITAL NETWORK</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Your premier destination for high-quality IPTV streaming services. Delivering entertainment excellence worldwide since 2020.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z.017-.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors text-sm">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors text-sm">Services</a></li>
+                        <li><a href="#packages" class="text-gray-400 hover:text-white transition-colors text-sm">Packages</a></li>
+                        <li><a href="#reseller" class="text-gray-400 hover:text-white transition-colors text-sm">Reseller Program</a></li>
+                        <li><a href="#apps" class="text-gray-400 hover:text-white transition-colors text-sm">Apps & Devices</a></li>
+                        <li><a href="#reviews" class="text-gray-400 hover:text-white transition-colors text-sm">Customer Reviews</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors text-sm">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Setup Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Troubleshooting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="text-red-500 mt-1">📧</div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Email Support</p>
+                                <a href="mailto:info.hawkeyelhr@gmail.com" class="text-white text-sm hover:text-red-500 transition-colors">info.hawkeyelhr@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-green-500 mt-1">💬</div>
+                            <div>
+                                <p class="text-gray-400 text-sm">WhatsApp Support</p>
+                                <p class="text-white text-sm">Available 24/7</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-blue-500 mt-1">🌍</div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Global Service</p>
+                                <p class="text-white text-sm">Worldwide Coverage</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2024 Dream Digital Network. All rights reserved.
+                    </div>
+                    <div class="flex items-center space-x-6 text-sm text-gray-400">
+                        <span>🔒 Secure Payments</span>
+                        <span>⚡ 99.9% Uptime</span>
+                        <span>🛡️ 24/7 Support</span>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <p class="text-xs text-gray-500">
+                        Dream Digital Network provides IPTV streaming technology services. Users are responsible for compliance with local laws and content licensing agreements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Interactive Video Demo System
+        let currentDemo = null;
+        let demoTimer = null;
+        let progressTimer = null;
+        let isPlaying = false;
+        let currentTime = 0;
+        const totalTime = 30;
+
+        // Channel demo content database with realistic streaming highlights
+        const channelDemos = {
+            cnn: {
+                name: "CNN International",
+                category: "Breaking News",
+                content: `
+                    <div class="w-full h-full bg-gradient-to-br from-red-900 to-red-700 flex flex-col justify-center items-center text-white relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-red-600 animate-pulse"></div>
+                        <div class="text-2xl md:text-4xl font-bold mb-4 animate-pulse">CNN</div>
+                        <div class="text-lg md:text-xl mb-6 bg-red-600 px-4 py-2 rounded">BREAKING NEWS</div>
+                        <div class="max-w-md text-center px-4">
+                            <div class="bg-black/50 text-white px-4 py-2 rounded mb-4">
+                                <div class="text-xs md:text-sm font-bold">🔴 LIVE FROM NEW YORK</div>
+                            </div>
+                            <div class="text-base md:text-lg mb-4 font-semibold">Global Markets Update</div>
+                            <div class="text-xs md:text-sm opacity-90 leading-relaxed">Stay informed with 24/7 breaking news coverage from around the world. Expert analysis and live reporting.</div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-xs bg-black/70 px-3 py-1 rounded">
+                            📍 New York • 12:30 PM EST
+                        </div>
+                        <div class="absolute bottom-4 right-4 text-xs bg-red-600 px-2 py-1 rounded animate-pulse">
+                            LIVE
+                        </div>
+                    </div>
+                `,
+                description: "24/7 breaking news and analysis"
+            },
+            bbc: {
+                name: "BBC World News",
+                category: "International News",
+                content: `
+                    <div class="w-full h-full bg-gradient-to-br from-blue-900 to-blue-700 flex flex-col justify-center items-center text-white relative">
+                        <div class="text-4xl font-bold mb-4">BBC</div>
+                        <div class="text-xl mb-6">WORLD NEWS</div>
+                        <div class="max-w-md text-center">
+                            <div class="bg-blue-600 text-white px-4 py-2 rounded mb-4">
+                                <div class="text-sm font-bold">🔴 LIVE FROM LONDON</div>
+                            </div>
+                            <div class="text-lg mb-4">European Parliament Session</div>
+                            <div class="text-sm opacity-90">Trusted international news coverage with correspondents worldwide. Unbiased reporting you can trust.</div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-xs bg-black/50 px-2 py-1 rounded">
+                            📍 London • 5:30 PM GMT
+                        </div>
+                        <div class="absolute top-4 right-4 text-xs bg-blue-600 px-2 py-1 rounded">
+                            HD QUALITY
+                        </div>
+                    </div>
+                `,
+                description: "Trusted international news coverage"
+            },
+            espn: {
+                name: "ESPN Sports Center",
+                category: "Sports",
+                content: `
+                    <div class="w-full h-full bg-gradient-to-br from-orange-900 to-red-800 flex flex-col justify-center items-center text-white relative">
+                        <div class="text-4xl font-bold mb-4">ESPN</div>
+                        <div class="text-xl mb-6">SPORTSCENTER</div>
+                        <div class="max-w-md text-center">
+                            <div class="bg-orange-600 text-white px-4 py-2 rounded mb-4">
+                                <div class="text-sm font-bold">🏀 LIVE SPORTS</div>
+                            </div>
+                            <div class="text-lg mb-4">NBA Finals Highlights</div>
+                            <div class="text-sm opacity-90">Your home for live sports, highlights, and expert analysis. Never miss the action!</div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-xs bg-black/50 px-2 py-1 rounded">
+                            🏀 Game 7 Tonight • 8:00 PM ET
+                        </div>
+                        <div class="absolute top-4 right-4 text-xs bg-orange-600 px-2 py-1 rounded animate-pulse">
+                            LIVE GAME
+                        </div>
+                    </div>
+                `,
+                description: "Live sports and highlights"
+            },
+            hbo: {
+                name: "HBO Premium",
+                category: "Premium Entertainment",
+                content: `
+                    <div class="w-full h-full bg-gradient-to-br from-purple-900 to-black flex flex-col justify-center items-center text-white relative">
+                        <div class="text-4xl font-bold mb-4">HBO</div>
+                        <div class="text-xl mb-6 text-purple-300">PREMIUM</div>
+                        <div class="max-w-md text-center">
+                            <div class="bg-purple-600 text-white px-4 py-2 rounded mb-4">
+                                <div class="text-sm font-bold">🎬 EXCLUSIVE CONTENT</div>
+                            </div>
+                            <div class="text-lg mb-4">House of the Dragon</div>
+                            <div class="text-sm opacity-90">Award-winning original series, blockbuster movies, and exclusive documentaries.</div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-xs bg-black/50 px-2 py-1 rounded">
+                            🎭 New Episode Tonight
+                        </div>
+                        <div class="absolute top-4 right-4 text-xs bg-purple-600 px-2 py-1 rounded">
+                            4K HDR
+                        </div>
+                    </div>
+                `,
+                description: "Premium original series and movies"
+            },
+            netflix: {
+                name: "Netflix Originals",
+                category: "Streaming Movies",
+                content: `
+                    <div class="w-full h-full bg-gradient-to-br from-red-900 to-black flex flex-col justify-center items-center text-white relative">
+                        <div class="text-4xl font-bold mb-4 text-red-500">NETFLIX</div>
+                        <div class="text-xl mb-6">ORIGINALS</div>
+                        <div class="max-w-md text-center">
+                            <div class="bg-red-600 text-white px-4 py-2 rounded mb-4">
+                                <div class="text-sm font-bold">🎥 NOW STREAMING</div>
+                            </div>
+                            <div class="text-lg mb-4">Stranger Things 5</div>
+                            <div class="text-sm opacity-90">Binge-watch the latest Netflix originals, movies, and series from around the world.</div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-xs bg-black/50 px-2 py-1 rounded">
+                            📺 Season Finale Available
+                        </div>
+                        <div class="absolute top-4 right-4 text-xs bg-red-600 px-2 py-1 rounded">
+                            ULTRA HD
+                        </div>
+                    </div>
+                `,
+                description: "Netflix originals and exclusive content"
+            },
+            disney: {
+                name: "Disney+ Family",
+                category: "Family Entertainment",
+                content: `
+                    <div class="w-full h-full bg-gradient-to-br from-blue-600 to-purple-700 flex flex-col justify-center items-center text-white relative">
+                        <div class="text-4xl font-bold mb-4">Disney+</div>
+                        <div class="text-xl mb-6">FAMILY</div>
+                        <div class="max-w-md text-center">
+                            <div class="bg-blue-500 text-white px-4 py-2 rounded mb-4">
+                                <div class="text-sm font-bold">✨ MAGICAL CONTENT</div>
+                            </div>
+                            <div class="text-lg mb-4">The Mandalorian</div>
+                            <div class="text-sm opacity-90">Disney classics, Marvel, Star Wars, Pixar, and National Geographic all in one place.</div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-xs bg-black/50 px-2 py-1 rounded">
+                            🌟 New Episodes Weekly
+                        </div>
+                        <div class="absolute top-4 right-4 text-xs bg-blue-500 px-2 py-1 rounded">
+                            DOLBY VISION
+                        </div>
+                    </div>
+                `,
+                description: "Disney, Marvel, Star Wars & more"
+            },
+            prime: {
+                name: "Amazon Prime Video",
+                category: "Prime Entertainment",
+                content: `
+                    <div class="w-full h-full bg-gradient-to-br from-blue-800 to-teal-700 flex flex-col justify-center items-center text-white relative">
+                        <div class="text-4xl font-bold mb-4">Prime</div>
+                        <div class="text-xl mb-6 text-blue-300">VIDEO</div>
+                        <div class="max-w-md text-center">
+                            <div class="bg-blue-600 text-white px-4 py-2 rounded mb-4">
+                                <div class="text-sm font-bold">🎬 PRIME EXCLUSIVE</div>
+                            </div>
+                            <div class="text-lg mb-4">The Boys Season 4</div>
+                            <div class="text-sm opacity-90">Amazon Prime originals, Hollywood blockbusters, and exclusive series.</div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-xs bg-black/50 px-2 py-1 rounded">
+                            🎭 Exclusive to Prime
+                        </div>
+                        <div class="absolute top-4 right-4 text-xs bg-blue-600 px-2 py-1 rounded">
+                            4K UHD
+                        </div>
+                    </div>
+                `,
+                description: "Amazon Prime exclusive content"
+            },
+            discovery: {
+                name: "Discovery Channel",
+                category: "Documentary",
+                content: `
+                    <div class="w-full h-full bg-gradient-to-br from-yellow-700 to-orange-800 flex flex-col justify-center items-center text-white relative">
+                        <div class="text-4xl font-bold mb-4">DISCOVERY</div>
+                        <div class="text-xl mb-6">CHANNEL</div>
+                        <div class="max-w-md text-center">
+                            <div class="bg-yellow-600 text-black px-4 py-2 rounded mb-4">
+                                <div class="text-sm font-bold">🌍 EXPLORE MORE</div>
+                            </div>
+                            <div class="text-lg mb-4">Planet Earth III</div>
+                            <div class="text-sm opacity-90">Discover the world through documentaries, nature shows, and educational content.</div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-xs bg-black/50 px-2 py-1 rounded">
+                            🦁 Wildlife Special Tonight
+                        </div>
+                        <div class="absolute top-4 right-4 text-xs bg-yellow-600 text-black px-2 py-1 rounded">
+                            NATURE HD
+                        </div>
+                    </div>
+                `,
+                description: "Educational and nature documentaries"
+            }
+        };
+
+        // Enhanced demo playback functions
+        function playChannelDemo(channelId) {
+            if (currentDemo) {
+                stopDemo();
+            }
+            
+            const demo = channelDemos[channelId];
+            if (!demo) return;
+            
+            currentDemo = channelId;
+            currentTime = 0;
+            isPlaying = true;
+            
+            // Update UI
+            document.getElementById('welcomeScreen').classList.add('hidden');
+            document.getElementById('demoVideo').classList.remove('hidden');
+            document.getElementById('videoContent').innerHTML = demo.content;
+            document.getElementById('channelInfo').textContent = demo.name;
+            document.getElementById('currentChannel').textContent = demo.name;
+            
+            // Update channel selector
+            document.querySelectorAll('.channel-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`[data-channel="${channelId}"]`).classList.add('active');
+            
+            // Update play/pause button
+            document.getElementById('playIcon').classList.add('hidden');
+            document.getElementById('pauseIcon').classList.remove('hidden');
+            
+            // Start progress animation
+            startProgressAnimation();
+            
+            // Auto-stop after 30 seconds
+            demoTimer = setTimeout(() => {
+                stopDemo();
+            }, 30000);
+            
+            // Update viewer count randomly
+            updateViewerCount();
+        }
+
+        function startProgressAnimation() {
+            progressTimer = setInterval(() => {
+                if (isPlaying && currentTime < totalTime) {
+                    currentTime += 0.1;
+                    const progress = (currentTime / totalTime) * 100;
+                    document.getElementById('progressBar').style.width = progress + '%';
+                    
+                    // Update time display
+                    const minutes = Math.floor(currentTime / 60);
+                    const seconds = Math.floor(currentTime % 60);
+                    document.getElementById('currentTime').textContent = 
+                        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }
+            }, 100);
+        }
+
+        function togglePlayPause() {
+            if (!currentDemo) return;
+            
+            isPlaying = !isPlaying;
+            
+            if (isPlaying) {
+                document.getElementById('playIcon').classList.add('hidden');
+                document.getElementById('pauseIcon').classList.remove('hidden');
+            } else {
+                document.getElementById('playIcon').classList.remove('hidden');
+                document.getElementById('pauseIcon').classList.add('hidden');
+            }
+        }
+
+        function seekVideo(event) {
+            if (!currentDemo) return;
+            
+            const progressContainer = event.currentTarget;
+            const rect = progressContainer.getBoundingClientRect();
+            const clickX = event.clientX - rect.left;
+            const percentage = clickX / rect.width;
+            
+            currentTime = percentage * totalTime;
+            const progress = (currentTime / totalTime) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            
+            // Update time display
+            const minutes = Math.floor(currentTime / 60);
+            const seconds = Math.floor(currentTime % 60);
+            document.getElementById('currentTime').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function stopDemo() {
+            if (demoTimer) {
+                clearTimeout(demoTimer);
+                demoTimer = null;
+            }
+            
+            if (progressTimer) {
+                clearInterval(progressTimer);
+                progressTimer = null;
+            }
+            
+            currentDemo = null;
+            isPlaying = false;
+            currentTime = 0;
+            
+            // Reset UI
+            document.getElementById('welcomeScreen').classList.remove('hidden');
+            document.getElementById('demoVideo').classList.add('hidden');
+            document.getElementById('progressBar').style.width = '0%';
+            document.getElementById('currentTime').textContent = '00:00';
+            document.getElementById('currentChannel').textContent = 'Select Channel';
+            
+            // Reset channel selector
+            document.querySelectorAll('.channel-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Reset play button
+            document.getElementById('playIcon').classList.remove('hidden');
+            document.getElementById('pauseIcon').classList.add('hidden');
+        }
+
+        function closeDemo() {
+            stopDemo();
+        }
+
+        function updateViewerCount() {
+            const baseCount = 12847;
+            const variation = Math.floor(Math.random() * 2000) - 1000;
+            const newCount = baseCount + variation;
+            document.getElementById('viewerCount').textContent = newCount.toLocaleString();
+        }
+
+        function changeVolume(direction) {
+            // Visual feedback for volume change
+            const volumeIndicator = document.createElement('div');
+            volumeIndicator.className = 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-4 py-2 rounded text-sm z-50';
+            volumeIndicator.textContent = direction === 'up' ? '🔊 Volume Up' : '🔉 Volume Down';
+            
+            document.getElementById('tvScreen').appendChild(volumeIndicator);
+            
+            setTimeout(() => {
+                volumeIndicator.remove();
+            }, 1000);
+        }
+
+        // Currency conversion system
+        const exchangeRates = {
+            PKR: { PKR: 1, USD: 0.00362, INR: 0.301, AED: 0.0133, EUR: 0.00333, GBP: 0.00286, CAD: 0.0049, AUD: 0.0055, SAR: 0.0136, QAR: 0.0132 },
+            USD: { PKR: 276, USD: 1, INR: 83.12, AED: 3.67, EUR: 0.92, GBP: 0.79, CAD: 1.35, AUD: 1.52, SAR: 3.75, QAR: 3.64 },
+            INR: { PKR: 3.32, USD: 0.012, INR: 1, AED: 0.044, EUR: 0.011, GBP: 0.0095, CAD: 0.016, AUD: 0.018, SAR: 0.045, QAR: 0.044 },
+            AED: { PKR: 75.2, USD: 0.272, INR: 22.6, AED: 1, EUR: 0.25, GBP: 0.215, CAD: 0.368, AUD: 0.414, SAR: 1.02, QAR: 0.99 },
+            EUR: { PKR: 300, USD: 1.09, INR: 90.5, AED: 4.0, EUR: 1, GBP: 0.86, CAD: 1.47, AUD: 1.66, SAR: 4.08, QAR: 3.96 },
+            GBP: { PKR: 349, USD: 1.27, INR: 105.3, AED: 4.65, EUR: 1.16, GBP: 1, CAD: 1.71, AUD: 1.93, SAR: 4.75, QAR: 4.61 },
+            CAD: { PKR: 204, USD: 0.74, INR: 61.5, AED: 2.72, EUR: 0.68, GBP: 0.58, CAD: 1, AUD: 1.13, SAR: 2.78, QAR: 2.70 },
+            AUD: { PKR: 181, USD: 0.66, INR: 54.7, AED: 2.42, EUR: 0.60, GBP: 0.52, CAD: 0.89, AUD: 1, SAR: 2.47, QAR: 2.40 },
+            SAR: { PKR: 73.6, USD: 0.267, INR: 22.1, AED: 0.98, EUR: 0.245, GBP: 0.21, CAD: 0.36, AUD: 0.405, SAR: 1, QAR: 0.97 },
+            QAR: { PKR: 75.8, USD: 0.275, INR: 22.8, AED: 1.01, EUR: 0.252, GBP: 0.217, CAD: 0.37, AUD: 0.417, SAR: 1.03, QAR: 1 }
+        };
+
+        const currencySymbols = {
+            PKR: '₨', USD: '$', INR: '₹', AED: 'د.إ', EUR: '€', GBP: '£', CAD: 'C$', AUD: 'A$', SAR: '﷼', QAR: 'ر.ق'
+        };
+
+        function updatePricing(currency) {
+            // Update regular pricing
+            document.querySelectorAll('.price-display').forEach(element => {
+                const pkrPrice = parseFloat(element.dataset.pkr);
+                const rate = exchangeRates.PKR[currency];
+                const convertedPrice = (pkrPrice * rate).toFixed(2);
+                const symbol = currencySymbols[currency];
+                element.textContent = `${symbol}${convertedPrice}`;
+            });
+
+            // Update reseller pricing
+            document.querySelectorAll('.reseller-price-display').forEach(element => {
+                const pkrPrice = parseFloat(element.dataset.pkr);
+                const rate = exchangeRates.PKR[currency];
+                const convertedPrice = (pkrPrice * rate).toFixed(2);
+                const symbol = currencySymbols[currency];
+                element.textContent = `${symbol}${convertedPrice}`;
+            });
+
+            // Update tax information
+            updateTaxInfo(currency);
+        }
+
+        function updateTaxInfo(currency) {
+            const taxRanges = {
+                USD: { min: 7, max: 25, example: '$0.13-0.45' },
+                PKR: { min: 7, max: 25, example: '₨35-125' },
+                INR: { min: 10, max: 18, example: '₹15-45' },
+                AED: { min: 7, max: 12, example: 'د.إ0.46-1.60' },
+                EUR: { min: 12, max: 20, example: '€0.12-0.33' },
+                GBP: { min: 12, max: 17, example: '£0.10-0.24' },
+                CAD: { min: 8, max: 15, example: 'C$0.17-0.37' },
+                AUD: { min: 12, max: 17, example: 'A$0.19-0.47' },
+                SAR: { min: 7, max: 12, example: '﷼0.47-1.63' },
+                QAR: { min: 7, max: 12, example: 'ر.ق0.46-1.58' }
+            };
+
+            const taxInfo = taxRanges[currency];
+            
+            // Update regular plan tax info
+            for (let i = 1; i <= 4; i++) {
+                const element = document.getElementById(`taxInfo${i}`);
+                if (element) {
+                    element.textContent = `+ Est. ${taxInfo.example} (taxes & fees)`;
+                }
+            }
+
+            // Update reseller plan tax info
+            for (let i = 1; i <= 4; i++) {
+                const element = document.getElementById(`resellerTaxInfo${i}`);
+                if (element) {
+                    element.textContent = `+ Est. ${taxInfo.example} (taxes & fees)`;
+                }
+            }
+        }
+
+        // Currency selector event listeners
+        document.getElementById('currencySelector').addEventListener('change', function() {
+            updatePricing(this.value);
+            document.getElementById('currencySelector2').value = this.value;
+        });
+
+        document.getElementById('currencySelector2').addEventListener('change', function() {
+            updatePricing(this.value);
+            document.getElementById('currencySelector').value = this.value;
+        });
+
+        // App category switching
+        function showAppCategory(category) {
+            // Hide all app content
+            document.querySelectorAll('.app-tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.netflix-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected content
+            document.getElementById(category).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default currency to USD
+            updatePricing('USD');
+            
+            // Update viewer count every 30 seconds
+            setInterval(updateViewerCount, 30000);
+            
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all cards and sections
+            document.querySelectorAll('.netflix-card, .review-card, .app-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            if (demoTimer) clearTimeout(demoTimer);
+            if (progressTimer) clearInterval(progressTimer);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9649aeb6e6de9098',t:'MTc1MzQyNTgwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
